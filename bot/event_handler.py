@@ -1,6 +1,7 @@
 import json
 import logging
 import re
+import urllib2
 
 logger = logging.getLogger(__name__)
 
@@ -48,5 +49,9 @@ class RtmEventHandler(object):
                     self.msg_writer.write_joke(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
+                elif 'build' in msg_txt:
+                    response = urllib2.urlopen('https://chaste.cs.ox.ac.uk/build_summary')
+                    html = response.read()
+                    self.msg_writer.send_message(event['channel'],html)
                 else:
                     self.msg_writer.write_prompt(event['channel'])
