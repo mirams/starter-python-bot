@@ -49,14 +49,11 @@ class RtmEventHandler(object):
                     self.msg_writer.write_joke(event['channel'])
                 elif 'attachment' in msg_txt:
                     self.msg_writer.demo_attachment(event['channel'])
-<<<<<<< HEAD
                 elif 'build' in msg_txt:
                     response = urllib2.urlopen('https://chaste.cs.ox.ac.uk/build_summary')
                     html = response.read()
                     self.msg_writer.send_message(event['channel'],html)
-=======
                 elif 'echo' in msg_txt:
                     self.msg_writer.send_message(event['channel'], msg_txt)
->>>>>>> BeepBoopHQ/master
                 else:
                     self.msg_writer.write_prompt(event['channel'])

@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 .DS_Store
-=======
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -63,4 +61,4 @@ target/
 
 .DS_Store
 plot.png
->>>>>>> BeepBoopHQ/master
+
